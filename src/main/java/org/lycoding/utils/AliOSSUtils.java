@@ -23,8 +23,8 @@ public class AliOSSUtils {
 
 
     final static private String End_Point = "https://oss-cn-hangzhou.aliyuncs.com";
-    final static private String Access_Key_Id = System.getenv("OSS_ACCESS_KEY_ID");
-    final static private String Access_Key_Secret = System.getenv("OSS_ACCESS_KEY_SECRET");
+    final static private String OSS_ACCESS_KEY_ID = System.getenv("OSS_ACCESS_KEY_ID");
+    final static private String OSS_ACCESS_KEY_SECRET = System.getenv("OSS_ACCESS_KEY_SECRET");
     final static private String Bucket_Name = "bsuc";
 
     public static String upload(String fileName, InputStream inputStream) throws IOException {
@@ -32,7 +32,7 @@ public class AliOSSUtils {
         try {
 
             //上传文件到 OSS
-            OSS ossClient = new OSSClientBuilder().build(End_Point, Access_Key_Id, Access_Key_Secret);
+            OSS ossClient = new OSSClientBuilder().build(End_Point, OSS_ACCESS_KEY_ID, OSS_ACCESS_KEY_SECRET);
             ossClient.putObject(Bucket_Name, fileName, inputStream);
 
             //文件访问路径
