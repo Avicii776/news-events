@@ -21,6 +21,6 @@ public class interceptConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
 //        把登录拦截器注册到WebMvc容器，将拦截所有请求
         InterceptorRegistration interceptorRegistration = registry.addInterceptor(loginInterceptor);
-        interceptorRegistration.excludePathPatterns("/user/login","/user/register","/avator");//登录跟注册请求不拦截
+        interceptorRegistration.excludePathPatterns("/user/login","/user/register");//登录跟注册请求不拦截
     }
 }

@@ -156,7 +156,6 @@
       <artifactId>commons-pool2</artifactId>
     </dependency>
 
-
 <!--json序列化依赖-->
     <dependency>
       <groupId>com.alibaba</groupId>
@@ -164,8 +163,14 @@
       <version>1.2.75</version>
     </dependency>
 
+  <!--es依赖  一定要指定版本，不然spring父工程中的spring-boot-dependencice中的版本会覆盖-->
+    <dependency>
+      <groupId>org.elasticsearch.client</groupId>
+      <artifactId>elasticsearch-rest-high-level-client</artifactId>
+      <version>7.12.1</version>
+    </dependency>
 
-  </dependencies>
+</dependencies>
 
 
   <build>
